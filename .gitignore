@@ -1,15 +1,10 @@
 
 # intellij
 out/
-.idea/workspace.xml
-.idea/misc.xml
-.idea/codeStyles
-.idea/gradle.xml
-.idea/terminal.xml
+.idea/
 target/
 
 # gradle
 .gradle/
 build/
-/.idea/compiler.xml
-/.idea/jarRepositories.xml
+
