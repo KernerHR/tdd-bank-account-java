@@ -1,7 +1,7 @@
 package org.xpdojo.bank;
 
 public class Account {
-    int currentBalance = 0;
+    int  currentBalance = 0;
 
     int getBalance() {
         return currentBalance;
