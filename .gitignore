@@ -11,3 +11,5 @@ target/
 # gradle
 .gradle/
 build/
+/.idea/compiler.xml
+/.idea/jarRepositories.xml
