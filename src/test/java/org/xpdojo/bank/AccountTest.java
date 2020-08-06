@@ -6,24 +6,31 @@ import static org.assertj.core.api.Assertions.assertThat;
 // my first change
 public class AccountTest {
 
+    private final Account account = Account.newEmptyAccount();
+
     @Test
     public void newAccountShallHaveZeroBalance() {
-        Account account = new Account();
         int amount = account.getBalance();
         assertThat(amount).isZero();
     }
 
     @Test
-    public  void depositingIncreasesAmount () {
-        Account account = new Account();
+    public void newAccountShallHaveStartingBalance() {
+        Account newAccountWithBalance = Account.newAccountWithBalance(35);
+        int amount = newAccountWithBalance.getBalance();
+        assertThat(amount).isEqualTo(35);
+    }
+
+    @Test
+    public void depositingIncreasesAmount() {
         account.deposit(10);
         int amount = account.getBalance();
         assertThat(amount).isEqualTo(10);
 
     }
+
     @Test
-    public  void depositingMultipleIncreasesAmount () {
-        Account account = new Account();
+    public void depositingMultipleIncreasesAmount() {
         account.deposit(10);
         account.deposit(10);
         int amount = account.getBalance();
@@ -32,13 +39,12 @@ public class AccountTest {
     }
     @Test
     public  void depositingMultipleIncreasesAmountOnMultipleAccounts () {
-        Account account1 = new Account();
-        account1.deposit(10);
-        Account account2 = new Account();
+        account.deposit(10);
+        Account account2 = Account.newEmptyAccount();
         account2.deposit(20);
-        account1.deposit(10);
+        account.deposit(10);
         account2.deposit(10);
-        int amount1 = account1.getBalance();
+        int amount1 = account.getBalance();
         int amount2 = account2.getBalance();
         assertThat(amount1).isEqualTo(20);
         assertThat(amount2).isEqualTo(30);
