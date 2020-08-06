@@ -7,6 +7,6 @@ public class Account {
         return currentBalance;
     }
     void deposit (int amount) {
-        currentBalance = currentBalance + amount;
+        currentBalance += amount;
     }
 }
